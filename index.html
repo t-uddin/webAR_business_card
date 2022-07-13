@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- include a-frame -->
+        <script src="ARJS_files/aframe-min.js"></script>
+        <!-- <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script> -->
+
+
+        <!-- include ar.js for aframe -->
+        <script src="ARJS_files/aframe-ar.js"></script>
+        <!-- <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script> -->
+        <!-- <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script> -->
+
+
+        <!-- <script src="ARJS_files/ar-threex.js"></script> -->
+    </head>
+
+    <body style="margin : 0px; overflow: hidden;">
+
+        <!-- info at the top of the page -->
+        <div style='position: fixed; top: 10px; width:100%; text-align: center; z-index: 1; color: white;'>
+            Instructions:<br/>
+            Point your camera at the target marker.
+        </div>    
+      
+        <!-- Define your 3d scene and enabled ar.js -->
+        <a-scene debug embedded arjs='trackingMethod: best; debugUIEnabled: false;'>
+
+
+        <!-- Declare assets for use in the scene. -->
+        <a-assets timeout="1000">            
+            <a-asset-item id="3DModel-obj" src="mei.obj"></a-asset-item preload="auto">
+        
+        </a-assets>
+
+
+        <!-- Create an anchor to attach the augmented reality to marker -->
+        <a-anchor hit-testing-enabled="true">
+
+        <!-- Model -->
+            <!-- <a-entity
+                position = "0.5 -2 0.5"
+                scale = "0.10 0.10 0.10"
+                gltf-model="#3d_model">
+            </a-entity> -->
+
+        <a-obj-model id="my3DModel" src="#3DModel-obj" position="0 0 0" rotation="0 0 0" scale=".1 .1 .1" material="opacity: 0.9; side:double; color: orange;"></a-obj-model>
+        
+            <!-- Animations -->
+
+
+        <!-- Card Info box -->
+
+        </a-anchor>
+
+        <!-- Define a static camera -->
+        <a-camera-static/>
+
+        </a-scene>
+
+        <!-- add some info at the bottom left of the page -->
+        <div>
+        <span id="myText" style='z-index: 1; color: white; position: fixed; left: 50px; bottom: 10px;'>Add some text here.</span>
+        </div>   
+
+</body>
+</html>
