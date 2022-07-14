@@ -29,8 +29,7 @@
 
         <!-- Declare assets for use in the scene. -->
         <a-assets timeout="1000">            
-            <a-asset-item id="3DModel-obj" src="models/mei.obj"></a-asset-item preload="auto">
-        
+            <a-asset-item id="avatar" src="models/Standing W_Briefcase Idle.gltf"></a-asset-item preload="auto">
         </a-assets>
 
 
@@ -38,13 +37,13 @@
         <a-anchor hit-testing-enabled="true">
 
         <!-- Model -->
-            <!-- <a-entity
+            <a-entity gltf-model="#avatar"
                 position = "0.5 -2 0.5"
                 scale = "0.10 0.10 0.10"
-                gltf-model="#3d_model">
-            </a-entity> -->
+                rotation="0 0 0">
+            </a-entity>
 
-        <a-obj-model id="my3DModel" src="#3DModel-obj" position="0 0 0" rotation="0 0 0" scale=".1 .1 .1" material="opacity: 0.9; side:double; color: orange;"></a-obj-model>
+        <!-- <a-obj-model id="my3DModel" src="#3DModel-obj" position="0 0 0" rotation="0 0 0" scale=".1 .1 .1" material="opacity: 0.9; side:double; color: orange;"></a-obj-model> -->
         
             <!-- Animations -->
 
